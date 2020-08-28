@@ -5,4 +5,18 @@
 // d) Lag funksjonalitet for å sjekke om brukernavnet eksisterer.
 // e) Lag funksjonalitet for å sjekket at passordet stemmer hvis brukernavnet eksisterer.
 fun main() {
+    val loginDetaljer: MutableMap<String, String> = mutableMapOf("brukernavn" to "passord", "b" to "p")
+    loginDetaljer["Bruker"] = "Pass"
+
+    println("Brukernavn: ")
+    val username = readLine()
+
+    println(loginDetaljer.containsKey(username))
+
+    println("Passord: ")
+    val password = readLine()
+
+    if(loginDetaljer.containsKey(username)) {
+        println(loginDetaljer[username].equals(password))
+    }
 }
